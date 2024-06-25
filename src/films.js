@@ -13,7 +13,12 @@ function getMoviesFromDirector(array, director) {
 
 // Exercise 3: Calculate the average of the films of a given director.
 function moviesAverageOfDirector(array, director) {
+  let moviesDirector = array.filter(item => item.director === director);
   
+  let suma = moviesDirector.reduce((acc, movie) => acc + movie.score, 0);
+  let mitjana = suma / moviesDirector.length;
+  
+  return parseFloat(mitjana.toFixed(2));
 }
 
 
